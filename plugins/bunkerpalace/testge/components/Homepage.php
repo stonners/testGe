@@ -5,6 +5,7 @@ use BunkerPalace\TestGe\Models\Event;
 
 class Homepage extends ComponentBase
 {
+    public $events;
     public function componentDetails()
     {
         return [
@@ -20,9 +21,9 @@ class Homepage extends ComponentBase
     {
         $self=$this;
         $query = Event::all();
-        $this->event = $query;
+        $self->events = $query;
        
-        
+        return $query;
     }
 
     public function defineProperties()

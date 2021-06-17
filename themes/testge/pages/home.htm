@@ -3,6 +3,11 @@ layout = "default"
 
 [homepage]
 ==
+
 a
-{{dump(__SELF__.events)}}
+{% component ‘homepage’ %}
+{%for event in homepage.event%}
+<p>id: {{event.id}}, titre: {{event.title}}</p>
+<br>
+{%endfor%}
 a
