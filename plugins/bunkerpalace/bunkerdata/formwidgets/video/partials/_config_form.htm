@@ -1,0 +1,28 @@
+<div class="video-config-form field-fileupload style-image-multi is-sortable is-multi"
+     id="<?= $this->getId() ?>"
+     data-control="videoupload"
+     data-unique-id="<?= $this->getId() ?>"
+     data-relation-type="<?= $relationType ?>"
+     data-count-video="<?= count($videoList) ?>"
+     data-sort-handler="<?= $this->getEventHandler('onSortVideo') ?>">
+
+    <div class="input-group">
+        <input type="text" class="form-control video-upload-url" value="" placeholder="URL"/>
+        <span class="input-group-btn">
+            <a
+                class="btn btn-primary video-upload-btn"
+                data-request-handler="<?= $this->getEventHandler('onGenerateVideo') ?>"
+                data-popup-load-indicator >
+                Add
+            </a>
+        </span>
+    </div>
+
+    <?php if(isset($videoList)): ?>
+        <div class="video-upload-container field-fileupload style-image-multi upload-files-container">
+            <?php foreach ($videoList as $d): ?>
+                <?= $this->makePartial('video', ['data' => $d]); ?>
+            <?php endforeach ?>
+        </div>
+    <?php endif ?>
+</div>

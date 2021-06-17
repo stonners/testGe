@@ -1,0 +1,40 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+tabs:
+    fields:
+        mailchimp_api_key:
+            label: Clé d'API Mailchimp
+            tab: Configuration
+        test_emails:
+            label: Adresse(s) e-mail de récéption des tests
+            default: test@example.com
+            tab: Configuration
+        from_name:
+            label: Nom de l'expéditeur à afficher
+            tab: Configuration
+        reply_to_email:
+            label: Adresse de réponse
+            default: contact@example.com
+            tab: Configuration
+        list_id:
+            label: Liste utilisée pour les inscriptions
+            type: dropdown
+            dependsOn: mailchimp_api_key
+            tab: "Formulaire d'inscription"
+        page_template:
+            label: Template de page utilisée pour le rendu
+            type: dropdown
+            tab: Mise en page
+        logo:
+            label: Logo
+            type: fileupload
+            mode: image
+            imageWidth: 200
+            imageHeight: 200
+            tab: Mise en page
+        footer_text:
+            label: Texte du footer
+            type: richeditor
+            tab: Mise en page

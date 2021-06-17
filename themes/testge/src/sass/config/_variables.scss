@@ -1,0 +1,49 @@
+// Bootstrap
+$primary: #FF861E;
+$secondary: #FF5442;
+
+$dark: #000;
+$white: #fff;
+$grey: #F5F5F5;
+$red: #FF5442;
+
+$enable-responsive-font-sizes: true;
+
+$font-family-sans-serif: "benton-sans", sans-serif;
+
+$headings-font-weight: 900;
+$headings-font-family: "benton-sans-wide", sans-serif;
+
+$grid-columns: 12;
+$grid-gutter-width: 40px;
+
+$container-max-widths: (
+  xl: 1360px
+);
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 1165px,
+  xl: 1200px
+);
+
+$spacer: 1rem;
+$spacers: (
+	6: $spacer * 4,
+	7: $spacer * 4.5,
+	8: $spacer * 6,
+	9: $spacer * 7.5,
+	10: $spacer * 10
+);
+
+$btn-border-radius: 0;
+$btn-border-radius-lg: 0;
+$btn-border-radius-sm : 0;
+$btn-font-family: $font-family-sans-serif-secondary;
+$btn-font-weight: 700;
+$btn-font-size-lg: 18px;
+
+// FontAwesome
+$fa-font-path: "../fonts";

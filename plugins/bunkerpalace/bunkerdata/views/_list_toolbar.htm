@@ -1,0 +1,55 @@
+<div data-control="toolbar">
+
+    <?php if ($this->action != 'reorder') { ?>
+
+        <a
+            href="<?= $this->actionUrl('create') ?>"
+            class="btn btn-primary oc-icon-plus">
+            Ajouter
+        </a>
+        <?php $config = (isset($this->widget->{$this->action}) ? $this->widget->{$this->action} : $this->widget->list); ?>
+        <?php if ($config->showCheckboxes) { ?>
+
+            <button
+                class="btn btn-default oc-icon-trash-o"
+                disabled="disabled"
+                onclick="$(this).data('request-data', {
+                    checked: $('.control-list').listWidget('getChecked')
+                })"
+                data-request="onDelete"
+                data-request-confirm="<?= e(trans('backend::lang.list.delete_selected_confirm')) ?>"
+                data-trigger-action="enable"
+                data-trigger=".control-list .list-checkbox input[type=checkbox]"
+                data-trigger-condition="checked"
+                data-request-success="$(this).prop('disabled', false)"
+                data-stripe-load-indicator>
+                <?= e(trans('backend::lang.list.delete_selected')) ?>
+            </button>
+
+        <?php }; ?>
+
+    <?php }; ?>
+
+    <?php if (in_array('Backend.Behaviors.ReorderController', $this->implement)) { ?>
+
+        <?php if ($this->action == 'reorder') { ?>
+
+            <a
+                href="<?= $this->actionUrl('index') ?>"
+                class="btn btn-primary oc-icon-caret-left">
+                Retour
+            </a>
+
+        <?php } else { ?>
+
+            <a
+                href="<?= $this->actionUrl('reorder') ?>"
+                class="btn btn-primary oc-icon-sort">
+                Changer l'ordre
+            </a>
+
+        <?php }; ?>
+
+    <?php }; ?>
+
+</div>

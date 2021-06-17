@@ -1,0 +1,61 @@
+<?php $isCreate = $this->formGetContext() == 'create'; ?>
+
+<?php if (!$this->fatalError): ?>
+
+    <?= $this->makePartial('scoreboard') ?>
+
+    <?= Form::open(['class' => 'layout']) ?>
+
+        <div>
+            <?= $this->formRender() ?>
+        </div>
+
+        <?php if (!$isCreate) {
+            print $this->fireViewEvent('backend.views.relationView');
+        } ?>
+
+        <div class="form-buttons">
+            <div class="loading-indicator-container">
+                <button
+                    type="submit"
+                    data-request="onSave"
+                    data-hotkey="ctrl+s, cmd+s"
+                    data-load-indicator="Enregistrement en cours..."
+                    <?php if (!$isCreate): ?>data-request-data="redirect:0"<?php endif ?>
+                    class="btn btn-primary">
+                    Enregistrer
+                </button>
+                <button
+                    type="button"
+                    data-request="onSave"
+                    data-request-data="close:1"
+                    data-hotkey="ctrl+enter, cmd+enter"
+                    data-load-indicator="Enregistrement en cours..."
+                    class="btn btn-default">
+                    Enregistrer et fermer
+                </button>
+
+                <?php if (!$isCreate) { ?>
+                    <button
+                        type="button"
+                        class="oc-icon-trash-o btn-icon danger pull-right"
+                        data-request="onDelete"
+                        data-load-indicator="Suppression en cours..."
+                        data-request-confirm="Supprimer?">
+                    </button>
+                <?php }; ?>
+
+                <span class="btn-text">
+                    ou <a href="<?= $this->actionUrl('index') ?>">Annuler</a>
+                </span>
+            </div>
+        </div>
+
+    <?= Form::close() ?>
+
+<?php else: ?>
+
+    <p class="flash-message static error"><?= e($this->fatalError) ?></p>
+    <p><a href="<?= $this->actionUrl('index') ?>" class="btn btn-default">Retour à la liste</a></p>
+
+<?php endif ?>

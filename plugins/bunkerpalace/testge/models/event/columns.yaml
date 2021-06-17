@@ -1,0 +1,16 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+
+    title:
+            label: Titre
+            disabled: false
+            span: left
+            comment: Titre de l'événement
+            tab: Général
+        

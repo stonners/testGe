@@ -1,0 +1,114 @@
+<div data-control="toolbar">
+
+    <?php if ($relationToolbarButtons) { ?>
+
+        <?php foreach ($relationToolbarButtons as $button): ?>
+
+            <?php if ($button == 'update') { ?>
+
+                <a
+                    data-control="popup"
+                    data-size="huge"
+                    data-handler="onRelationButtonUpdate"
+                    data-request-data="manage_id: '<?= $relationViewModel->id ?>'"
+                    href="javascript:;"
+                    class="btn btn-sm btn-secondary oc-icon-pencil">
+                    <?= e(trans('backend::lang.relation.update')) ?>
+                </a>
+
+            <?php } else if ($button == 'create') { ?>
+
+                <a
+                    data-control="popup"
+                    data-size="huge"
+                    data-handler="onRelationButtonCreate"
+                    href="javascript:;"
+                    class="btn btn-sm btn-secondary oc-icon-file">
+                    <?= e(trans('backend::lang.relation.create')) ?>
+                </a>
+
+            <?php } else if ($button == 'add') { ?>
+
+                <a
+                    data-control="popup"
+                    data-size="huge"
+                    data-handler="onRelationButtonAdd"
+                    href="javascript:;"
+                    class="btn btn-sm btn-secondary oc-icon-plus">
+                    <?= e(trans('backend::lang.relation.add')) ?>
+                </a>
+
+            <?php } else if ($button == 'link') { ?>
+
+                <a
+                    data-control="popup"
+                    data-size="huge"
+                    data-handler="onRelationButtonLink"
+                    href="javascript:;"
+                    class="btn btn-sm btn-secondary oc-icon-link">
+                    <?= e(trans('backend::lang.relation.link')) ?>
+                </a>
+
+            <?php } else if ($button == 'delete') { ?>
+
+                <?php if ($relationViewMode == 'single') { ?>
+                    <button
+                        class="btn btn-sm btn-secondary oc-icon-trash-o"
+                        data-request="onRelationButtonDelete"
+                        data-request-confirm="<?= e(trans('backend::lang.relation.delete_confirm')) ?>"
+                        data-stripe-load-indicator>
+                        <?= e(trans('backend::lang.relation.delete')) ?>
+                    </button>
+                <?php } else { ?>
+                    <button
+                        class="btn btn-sm btn-secondary oc-icon-trash-o"
+                        onclick="$(this).data('request-data', {
+                            checked: $('#<?= $this->relationGetId('view') ?> .control-list').listWidget('getChecked')
+                        })"
+                        disabled="disabled"
+                        data-request="onRelationButtonDelete"
+                        data-request-confirm="<?= e(trans('backend::lang.relation.delete_confirm')) ?>"
+                        data-trigger-action="enable"
+                        data-trigger="#<?= $this->relationGetId('view') ?> .control-list .list-checkbox input[type=checkbox]"
+                        data-trigger-condition="checked"
+                        data-stripe-load-indicator>
+                        <?= e(trans('backend::lang.relation.delete')) ?>
+                    </button>
+                <?php }; ?>
+
+            <?php } else if ($button == 'remove') { ?>
+
+                <?php if ($relationViewMode == 'single') { ?>
+                    <button
+                        class="btn btn-sm btn-secondary oc-icon-minus"
+                        data-request="onRelationButtonRemove"
+                        data-stripe-load-indicator>
+                        <?= e(trans('backend::lang.relation.remove')) ?>
+                    </button>
+                <?php } else { ?>
+                    <button
+                        class="btn btn-sm btn-secondary oc-icon-minus"
+                        onclick="$(this).data('request-data', {
+                            checked: $('#<?= $this->relationGetId('view') ?> .control-list').listWidget('getChecked')
+                        })"
+                        disabled="disabled"
+                        data-request="onRelationButtonRemove"
+                        data-trigger-action="enable"
+                        data-trigger="#<?= $this->relationGetId('view') ?> .control-list .list-checkbox input[type=checkbox]"
+                        data-trigger-condition="checked"
+                        data-stripe-load-indicator>
+                        <?= e(trans('backend::lang.relation.remove')) ?>
+                    </button>
+                <?php }; ?>
+
+            <?php } else { ?>
+
+                <?= $this->relationMakePartial('button_' . $button) ?>
+
+            <?php }; ?>
+
+        <?php endforeach ?>
+
+    <?php }; ?>
+
+</div>

@@ -1,0 +1,11 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    title:
+        label: Titre
+        searchable: true
+    sent_at:
+        label: Envoyée le
+        type: datetime

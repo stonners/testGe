@@ -1,0 +1,14 @@
+pipelines:
+    custom: # Pipelines that can only be triggered manually
+        deployment-to-prod:
+            - step:
+                  deployment: production
+                  script:
+                      - rsync -zrSlh --stats --exclude-from .rsyncignore $BITBUCKET_CLONE_DIR/ $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH
+                      
+    default:
+        - step:
+            name: Deploy to staging
+            deployment: staging
+            script:
+                - rsync -zrSlh --stats --exclude-from .rsyncignore $BITBUCKET_CLONE_DIR/ $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH

@@ -1,0 +1,34 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Newsletter
+
+# Model Form Field configuration
+form: $/bunkerpalace/mailchimpnewsletter/models/newsletter/fields.yaml
+
+# Model Class name
+modelClass: BunkerPalace\MailchimpNewsletter\Models\Newsletter
+
+# Default redirect location
+defaultRedirect: bunkerpalace/mailchimpnewsletter/newsletters
+
+# Create page
+create:
+    title: Create Newsletter
+    redirect: bunkerpalace/mailchimpnewsletter/newsletters/update/:id
+    redirectClose: bunkerpalace/mailchimpnewsletter/newsletters
+
+# Update page
+update:
+    title: Edit Newsletter
+    redirect: bunkerpalace/mailchimpnewsletter/newsletters
+    redirectClose: bunkerpalace/mailchimpnewsletter/newsletters
+
+# Preview page
+preview:
+    title: Preview Newsletter
+
+delete:
+    redirect: bunkerpalace/mailchimpnewsletter/newsletters

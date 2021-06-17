@@ -1,0 +1,27 @@
+<div class="report-widget">
+    <h3><?= e($this->property('title')) ?></h3>
+    <?php if (!isset($error)): ?>
+        <div class="row">
+            <?php foreach($projects as $project): ?>
+        		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        			<div class="media">
+        				<a class="pull-left m-r" target="_blank" title="<?= $project['Project']['name'] ?>" href="http://bunkerpalace.com/projects/display/<?= $project['Project']['id'] ?>">
+        					<img class="media-object" src="http://bunkerpalace.com/asset/<?php echo $project['Thumbnail']['id'] ;?>/100/100" alt="">
+        				</a>
+        				<div class="media-body">
+                            <a style="color: #2a3e51;" target="_blank" title="<?= $project['Project']['name'] ?>" href="http://bunkerpalace.com/projects/display/<?= $project['Project']['id'] ?>">
+                                <h4 style="font-weight: bold; text-transform: uppercase; font-weight: bold; font-size: 14px;" >
+                                    <?= mb_substr($project['Project']['name'], 0, 30) ;?><?= strlen($project['Project']['name']) > 30 ? '...' : '' ;?>
+                                </h4>
+                            </a>
+                            <?php $desc = (strip_tags($project['Project']['description'])); ?>
+        					<p class="description" style="font-size: 12px; color: #7e8c8d;"><?= mb_substr($desc, 0, 175) ;?><?= strlen($desc) > 175 ? '...' : '' ;?></p>
+        				</div>
+        			</div>
+        		</div>
+        	<?php endforeach; ?>
+        </div>
+    <?php else: ?>
+        <p class="flash-message static warning"><?= e($error) ?></p>
+    <?php endif ?>
+</div>

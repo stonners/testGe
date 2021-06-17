@@ -1,0 +1,15 @@
+<div id="container-{{ __SELF__.id }}">
+    <form 
+        data-request-validate
+        data-request="{{ __SELF__ }}::onSubscribe"
+        data-request-update="'{{ __SELF__ }}::result':'#container-{{ __SELF__.id }}'">
+
+        <input id="email" name="email" type="text" required placeholder="E-mail *" />
+        <div data-validate-for="email">E-mail invalide</div>
+        
+        <input name="merge[LNAME]" type="text" placeholder="Nom" />
+        <input name="merge[FNAME]" type="text" placeholder="Prénom" />
+
+        <button type="submit">Inscription</button>
+    </form>
+</div>

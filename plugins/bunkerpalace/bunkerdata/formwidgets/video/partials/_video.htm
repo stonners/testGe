@@ -1,0 +1,21 @@
+<div class="upload-object is-success" data-id="<?= $data['id'] ?>">
+    <a class="icon-container image" href="<?= $data['url'] ?>" target="_blank">
+        <img alt="" src="<?= $data['thumbnail_url'] ?>" />
+    </a>
+    <div class="info">
+        <h4 class="filename">
+            <span data-dz-name><?= $data['title'] ?></span>
+            <a href="javascript:;" class="upload-remove-button video-upload-remove"
+                data-request="<?= $this->getEventHandler('onRemoveVideo') ?>"
+                data-request-data="video_id:<?= $data['id'] ?>"
+                data-request-confirm="<?= e(trans('backend::lang.fileupload.remove_confirm')) ?>"><i
+                    class="icon-times"></i></a>
+        </h4>
+        <p class="size" data-dz-size><?= $data['provider_name'] ?></p>
+    </div>
+    <div class="meta">
+        <a href="javascript:;" class="drag-handle"><i class="icon-bars"></i></a>
+        <div class="progress-bar"><span class="upload-progress"></span></div>
+        <div class="error-message"><span></span></div>
+    </div>
+</div>

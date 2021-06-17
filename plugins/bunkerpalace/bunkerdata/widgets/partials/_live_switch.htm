@@ -1,0 +1,19 @@
+<form>
+    <input
+        id="<?= $column->getName() ?>_<?= $record->id ?>"
+        type="hidden"
+        name="live_switch[<?= $column->getName() ?>]"
+        value="<?= $value ?>">
+
+    <label class="custom-switch live-switch">
+        <input
+            data-request="onLiveSwitch"
+            data-request-data="className: '<?= addslashes(get_class($record)) ?>', id: <?= $record->id ?>, col: '<?= $column->getName() ?>'"
+            data-request-success="$('#<?= $column->getName() ?>_<?= $record->id ?>').val(data['value']);"
+            type="checkbox"
+            value="<?= $value ?>"
+            <?= $value == 1 ? 'checked="checked"' : '' ?>>
+        <span><span><?= e(trans('backend::lang.form.field_on')) ?></span><span><?= e(trans('backend::lang.form.field_off')) ?></span></span>
+        <a class="slide-button"></a>
+    </label>
+</form>

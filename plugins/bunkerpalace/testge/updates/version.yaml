@@ -1,0 +1,8 @@
+1.0.1 : 
+  - Creating tables
+  - create_events_table.php
+  - create_event_dates_table.php
+  - create_event_categories_table.php
+1.0.3 : 
+  - Updating tables event
+  - update_events_table.php

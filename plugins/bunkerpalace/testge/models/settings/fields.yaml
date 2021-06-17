@@ -1,0 +1,23 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+tabs:
+    fields:
+        section_meta:
+            label: Général
+            type: section
+            comment: Paramètres du site
+            tab: Général
+        site_title:
+            label: Titre du site
+            tab: Général
+            span: left
+        site_meta_keywords:
+            label: Meta keywords
+            tab: Général
+            span: right
+        site_meta_description:
+            label: Meta description
+            type: textarea
+            tab: Général
+            span: full

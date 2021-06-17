@@ -1,0 +1,45 @@
+<?php if ($formModel->id) { ?>
+
+    <div class="m-b-md" data-control="toolbar">
+
+        <div class="loading-indicator-container">
+
+            <?php if (!$formModel->sent_at) { ?>
+
+                <a
+                    href="<?= $formModel->url ?>"
+                    target="_blank"
+                    class="btn btn-primary oc-icon-eye">
+                    Prévisualiser
+                </a>
+                <button
+                    data-request="onSendTest"
+                    data-request-data="newsletter_id: <?php echo $formModel->id; ?>"
+                    data-request-confirm="Envoyer un test?"
+                    data-load-indicator="Envoi du test en cours..."
+                    class="btn btn-primary oc-icon-paper-plane-o">
+                    Envoyer un test
+                </button>
+                <a
+                    data-request="onSend"
+                    data-request-data="newsletter_id: <?php echo $formModel->id; ?>"
+                    data-request-confirm="Envoyer la newsletter?"
+                    data-load-indicator="Envoi en cours..."
+                    class="btn btn-primary oc-icon-paper-plane">
+                    Envoyer
+                </a>
+
+            <?php }; ?>
+
+            <a
+                href="https://admin.mailchimp.com/campaigns/show/?id=<?= $formModel->mc_web_id ?>"
+                target="_blank"
+                class="btn btn-primary oc-icon-external-link">
+                Voir sur Mailchimp
+            </a>
+
+        </div>
+
+    </div>
+
+<?php }; ?>

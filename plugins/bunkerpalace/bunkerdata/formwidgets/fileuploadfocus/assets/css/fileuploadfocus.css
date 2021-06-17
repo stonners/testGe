@@ -1,0 +1,23 @@
+.file-upload-focus-wrapper {
+    position: absolute;
+    top: 0;
+    left: 50%;
+}
+
+.file-upload-focus-handle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin-left: -10px;
+    margin-top: -10px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.file-upload-focus-handle i {
+    font-size: 20px;
+    color: green;
+    line-height: 20px;
+}

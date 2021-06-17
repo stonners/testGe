@@ -1,0 +1,25 @@
+1.0.8:
+    - Add oEmbed video functionality
+    - create_videos_table.php
+
+1.0.7:
+    - Fix file upload focus functionality
+    - add_focus_point_on_file.php
+
+1.0.6:
+    - Added file upload focus functionality
+
+1.0.5:
+    - Added richeditor embedded partial functionality
+
+1.0.4:
+    - Render the user defined scoreboard outside of the form tag in add/edit
+
+1.0.3:
+    - Fixed navbar account avatar broken display with latest version of OC
+
+1.0.2:
+    - Fixed mistake in relation-reorder JS code that was causing huge performances issues
+
+1.0.1:
+    - Initial version

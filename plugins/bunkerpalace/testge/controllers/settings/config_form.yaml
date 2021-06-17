@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Setting
+
+# Model Form Field configuration
+form: $/bunkerpalace/testge/models/setting/fields.yaml
+
+# Model Class name
+modelClass: BunkerPalace\TestGe\Models\Setting
+
+# Default redirect location
+defaultRedirect: bunkerpalace/testge/settings
+
+# Create page
+create:
+    title: Create Setting
+    redirect: bunkerpalace/testge/settings/update/:id
+    redirectClose: bunkerpalace/testge/settings
+
+# Update page
+update:
+    title: Edit Setting
+    redirect: bunkerpalace/testge/settings
+    redirectClose: bunkerpalace/testge/settings
+
+# Preview page
+preview:
+    title: Preview Setting

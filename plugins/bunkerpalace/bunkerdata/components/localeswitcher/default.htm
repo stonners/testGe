@@ -1,0 +1,5 @@
+<select onchange="document.location.href=this.value;">
+{% for code, name in locales %}
+    <option value="/{{ code ~ urls[code] }}" {{ code == activeLocale ? 'selected' }}>{{ code }}</option>
+{% endfor %}
+</select>

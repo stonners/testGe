@@ -1,0 +1,44 @@
+{
+  "name": "testge",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "serve": "gulp serve",
+    "build": "gulp build"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-pro": "^5.9.0",
+    "aos": "^2.3.4",
+    "bootstrap": "^4.3.1",
+    "bootstrap-datepicker": "^1.9.0",
+    "jquery": "^3.4.1",
+    "plyr": "^3.6.2",
+    "popper.js": "^1.15.0",
+    "select2": "^4.0.13",
+    "swiper": "^5.4.5",
+    "tornis": "^0.1.4",
+    "vanilla-lazyload": "^12.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "autoprefixer": "^9.0.2",
+    "babelify": "^10.0.0",
+    "browser-sync": "^2.24.6",
+    "browserify": "^16.2.2",
+    "cssnano": "^4.0.5",
+    "del": "^3.0.0",
+    "fs": "^0.0.1-security",
+    "gulp": "^3.9.1",
+    "gulp-extname": "^0.2.2",
+    "gulp-favicons": "^2.2.7",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-postcss": "^7.0.1",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-terser": "^1.2.0",
+    "natives": "1.1.6",
+    "vinyl-source-stream": "^2.0.0"
+  }
+}

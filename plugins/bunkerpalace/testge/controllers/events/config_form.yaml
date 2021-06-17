@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Event
+
+# Model Form Field configuration
+form: $/bunkerpalace/testge/models/event/fields.yaml
+
+# Model Class name
+modelClass: BunkerPalace\TestGe\Models\Event
+
+# Default redirect location
+defaultRedirect: bunkerpalace/testge/events
+
+# Create page
+create:
+    title: Create Event
+    redirect: bunkerpalace/testge/events/update/:id
+    redirectClose: bunkerpalace/testge/events
+
+# Update page
+update:
+    title: Edit Event
+    redirect: bunkerpalace/testge/events
+    redirectClose: bunkerpalace/testge/events
+
+# Preview page
+preview:
+    title: Preview Event

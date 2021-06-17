@@ -1,0 +1,15 @@
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-color: $white;
+}
+
+a {
+	color: $dark;
+	transition: 0.3s;
+
+	&:hover {
+		text-decoration: none;
+		color: $red;
+	}
+}

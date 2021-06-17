@@ -1,0 +1,21 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+tabs:
+    fields:
+        section_1:
+            label: Gestion des évènements
+            type: section
+            tab: Général
+        id:
+            label: ID
+            disabled: true
+            tab: Général
+
+        title:
+            label: Titre
+            disabled: false
+            span: left
+            comment: Titre de l'événement
+            tab: Général
+        

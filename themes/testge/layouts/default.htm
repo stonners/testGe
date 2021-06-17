@@ -1,0 +1,117 @@
+description = "Default layout"
+
+[googleTracker]
+[extendedLocalePicker]
+==
+function onStart()
+{
+    $this['site_settings'] = \BunkerPalace\testGe\Models\Settings::instance();
+}
+==
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>{{ site_settings.site_title }}</title>
+    <meta name="description" content="{{ site_settings.site_meta_description }}" />
+    <meta name="title" content="{{ site_settings.site_title }}" />
+    <meta name="keywords" content="{{ site_settings.site_meta_keywords }}" />
+
+    <meta property="og:title" content="{{ site_settings.site_title }}" />
+    <meta property="og:description" content="{{ site_settings.site_meta_description }}" />
+    <meta property="og:url" content="{{ ''|page }}" />
+    <meta property="og:image" content="{{ site_settings.default_og_image.path }}" />
+
+    <meta name="author" content="Bunker palace SA" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <meta name="generator" content="BunkerData" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ 'assets/favicons/favicon-16x16.png'|theme }}?v={% if site_settings.assets_version %}{{ site_settings.assets_version }}{% else %}0{% endif %}">
+    <link rel="icon" type="image/png" sizes="32x32"href="{{ 'assets/favicons/favicon-32x32.png'|theme }}?v={% if site_settings.assets_version %}{{ site_settings.assets_version }}{% else %}0{% endif %}">
+
+    {% if this.environment == 'dev' %}
+        <link 
+            href="{{ 'assets/css/app.css'|theme }}?v={{ date().timestamp }}" 
+            rel="stylesheet">
+    {% else %}
+        <link
+            href="{{ 'assets/css/app.css'|theme }}?v={% if site_settings.assets_version %}{{ site_settings.assets_version }}{% else %}0{% endif %}"
+            rel="stylesheet">
+    {% endif %}
+
+    {% styles %}
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <!-- Header -->
+        {% partial 'site/header' %}
+
+        <!-- Content -->
+        <div class="main">
+            {% page %}
+        </div>
+
+        <!-- Footer -->
+        {% partial 'site/footer' %}
+
+    </div>
+
+    <!-- Scripts -->
+    {% component 'googleTracker' %}
+    
+    {% if this.environment == 'dev' %}
+        <script
+            src="{{ 'assets/js/app.js'|theme }}?v={{ date().timestamp }}"></script>
+    {% else %}
+        <script
+            src="{{ 'assets/js/app.js'|theme }}?v={% if site_settings.assets_version %}{{ site_settings.assets_version }}{% else %}0{% endif %}"></script>
+    {% endif %}
+    <script>
+        window.cookieconsent.initialise({
+            "palette": {
+                "popup": {
+                    "background": "#ffffff",
+                    "text": "#000000"
+                },
+                "button": {
+                    "background": "#f33b4d",
+                    "text": "#000000"
+                }
+            },
+            "type": "opt-out",
+            "content": {
+                "message": "{{ 'cookie.message'|_ }}",
+            },
+            compliance: {
+                'opt-out': '<div class="cc-compliance"><a aria-label="deny cookies" role="button" tabindex="0" class="cc-btn cc-deny">Décliner</a><a role="button" tabindex="0" class="cc-btn" href="{{ "mentions"|page }}" rel="noopener noreferrer nofollow" target="_blank">{{ "cookie.link"|_ }}</a><a aria-label="allow cookies" role="button" tabindex="0" class="cc-btn cc-allow">{{ "cookie.allow"|_ }}</a></div>',
+            }
+        });
+        $(".cc-link").addClass("d-none");
+    </script>
+    <script>
+        if ($('#map').length) {
+            
+            let map = L.map("map", {
+                center: [50.0544967, 6.0619997,15],
+                zoom: 14,
+                gestureHandling: true
+            });
+            L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {}).addTo(map);
+            var markerIcon = L.icon({
+                iconUrl: '{{ "assets/img/cursor-map.png"|theme }}', 
+                iconSize: [150, 31],
+                iconAnchor: [10, 35]
+            });
+
+            L.marker([50.0544967, 6.0619997,15], {icon: markerIcon}).addTo(map);
+        }
+    </script>
+    {% framework extras %}
+    {% scripts %}
+
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+# Remove trash files
+.DS_Store
+.AppleDouble/
+.settings/
+.vagrant
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+._*
+.env.*
+.sass-cache
+.tmp
+.git
+themes/demo
+bower_components/
+node_modules/
+composer.phar
+.env
+.vscode
+.gitDim
+.gitBk

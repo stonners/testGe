@@ -1,0 +1,47 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+tabs:
+    fields:
+        title:
+            label: Titre de la newsletter
+            default: Newsletter
+            required: true
+            span: left
+            tab: Général
+        email_subject:
+            label: Sujet de l'email
+            default: Newsletter
+            required: true
+            span: right
+            tab: Général
+        mc_list_id:
+            label: Liste
+            type: dropdown
+            emptyOption: "Choisir une liste"
+            required: true
+            span: left
+            tab: Général
+        mc_segment_id:
+            label: Segment
+            type: dropdown
+            dependsOn: mc_list_id
+            span: right
+            tab: Général
+        mc_campaign_id@update:
+            label: Identifiant Mailchimp
+            disabled: true
+            span: full
+            tab: Général
+        body:
+            label: Contenu
+            type: richeditor
+            tab: Général
+        thumbnail:
+            label: Image d'en tête
+            type: fileupload
+            mode: image
+            imageWidth: 100
+            imageHeight: 100
+            tab: Général

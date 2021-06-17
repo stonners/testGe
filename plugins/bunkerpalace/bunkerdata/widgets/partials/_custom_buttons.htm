@@ -1,0 +1,12 @@
+<div class="dropdown custom-buttons-dropdown">
+    <a href="#" data-toggle="dropdown" class="btn btn-primary btn-xs oc-icon-caret-down"><?= $column->config['actions_button_label']; ?></a>
+    <ul class="dropdown-menu" role="menu">
+        <?php foreach($column->config['actions'] as $action) { ?>
+            <li role="presentation">
+                <a role="menuitem" tabindex="-1" href="<?= $action['url'] . '/' . $record->id; ?>">
+                    <?php if (isset($action['icon'])) { ?><i class="<?= $action['icon']; ?>"></i><?php }; ?> <?= $action['label']; ?>
+                </a>
+        </li>
+        <?php } ?>
+    </ul>
+</div>

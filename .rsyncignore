@@ -1,0 +1,6 @@
+/.gitignore
+/.rsyncignore
+/bitbucket-pipelines.yml
+/bitbucket-deployment-exclude.txt
+/Vagrantfile
+/Vagrant

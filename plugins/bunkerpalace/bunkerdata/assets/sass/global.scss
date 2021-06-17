@@ -1,0 +1,230 @@
+$color-bkp-green: #0d9551;
+$color-grey-dark: rgba(0, 0, 0, .84);
+
+$navbar-bg-color: $color-bkp-green;
+$sidebar-bg-color: $color-grey-dark;
+
+/* Live switch */
+
+.live-switch {
+    margin-bottom: 0;
+}
+
+/* relation reorder */
+
+.relation-reorder-drag-handle {
+    cursor: move;
+    text-align: center;
+    font-size: 18px;
+}
+
+.relation-reorder-drag-placeholder {
+    border: 2px dashed #4EA5E0 !important;
+    background-color: #cbe4f5 !important;
+}
+
+/* custom buttons dropdown */
+
+.custom-buttons-dropdown {
+
+    .dropdown-menu {
+
+        a {
+
+            &, i {
+                text-shadow: none;
+                color: #666666 !important;
+            }
+
+            &:hover,
+            &:hover i {
+                color: #fff !important;
+            }
+
+        }
+
+    }
+
+}
+
+/* FIX for custom buttons not properly showing inside lists */
+/* MAY HAVE SIDE EFFECTS!!! */
+
+.list-scrollable-container > .list-scrollable {
+    overflow: visible;
+}
+
+/* table rows */
+
+table.table.data {
+
+    td {
+
+        &,
+        &.list-checkbox {
+            vertical-align: middle;
+        }
+
+    }
+
+}
+
+/* login page */
+
+body.bunker-auth-layout {
+
+    background: $color-bkp-green;
+
+    h1.oc-logo {
+        background-image: url(/plugins/bunkerpalace/bunkerdata/assets/images/logo-bunkerpalace.png);
+    }
+
+    button.login-button,
+    button.restore-button {
+        background: #000 !important;
+    }
+
+}
+
+/* background logo */
+
+.layout.control-tabs.oc-logo-transparent:not(.has-tabs),
+.flex-layout-column.oc-logo-transparent:not(.has-tabs),
+.layout-cell.oc-logo-transparent {
+    background-image: url(/plugins/bunkerpalace/bunkerdata/assets/images/logo-bunkerpalace.png);
+    background-size: 200px;
+}
+
+/* navbar */
+
+// Hide default svg icons and force display of fallback font icons (color icons are ugly)
+html.svg nav#layout-mainmenu img.svg-icon,
+.mainmenu-collapsed > div ul.mainmenu-nav li a .nav-icon img {
+    display: none !important;
+}
+
+html.svg .svg-icon-container i.svg-replace {
+    display: inline-block;
+}
+
+// Reduce size of navbar
+
+nav#layout-mainmenu {
+
+    background-color: $navbar-bg-color;
+
+    &.navbar-mode-inline {
+        height: 40px;
+
+        ul.mainmenu-nav li:first-child {
+            margin-left: -8px;
+        }
+
+        ul.mainmenu-toolbar li.mainmenu-account > a {
+            height: 40px;
+            line-height: 40px;
+        }
+
+        ul.mainmenu-nav li a {
+            padding: 0 8px;
+        }
+    }
+
+    ul li a {
+        text-shadow: none;
+
+        .nav-icon i {
+            font-size: 15px;
+        }
+    }
+
+
+    ul.mainmenu-toolbar {
+
+        li.mainmenu-preview {
+            display: none;
+        }
+
+        li.mainmenu-account {
+
+            .account-name {
+                margin-right: 0;
+            }
+
+            img.account-avatar {
+                width: 24px;
+            }
+
+        }
+
+    }
+
+}
+
+/* sidebar */
+
+nav#layout-sidenav {
+
+    background-color: $sidebar-bg-color;
+
+}
+
+/* sidebar navtree (settings) */
+
+.sidenav-tree {
+
+    background-color: $sidebar-bg-color !important;
+
+    ul.top-level > li > div.group:before,
+    ul.top-level > li > div.group:after {
+        display: none;
+    }
+
+    ul.top-level > li > ul li.active {
+        border-color: $color-bkp-green !important;
+    }
+
+}
+
+/* Four columns backend forms */
+
+.form-group.span-left-left {
+    float: left;
+    width: 22.75%;
+    clear: left;
+    margin-right: 1.5%;
+
+    @media screen and (max-width: 769px) {
+        width: 48.5%;
+    }
+}
+.form-group.span-left-right {
+    float: left;
+    width: 22.75%;
+    margin-left: 1.5%;
+
+    @media screen and (max-width: 769px) {
+        width: 48.5%;
+    }
+}
+.form-group.span-right-left {
+    float: left;
+    width: 22.75%;
+    margin-left: 3%;
+
+    @media screen and (max-width: 769px) {
+        width: 48.5%;
+        margin-left: 0;
+        margin-right: 1.5%;
+    }
+}
+.form-group.span-right-right {
+    float: right;
+    width: 22.75%;
+    margin-left: 1.5%;
+    clear: right;
+
+    @media screen and (max-width: 769px) {
+        width: 48.5%;
+    }
+}

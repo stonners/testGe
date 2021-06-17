@@ -1,0 +1,12 @@
+{
+    "fonts": [
+        "src/assets/fonts/**/*",
+        "node_modules/@fortawesome/fontawesome-pro/webfonts/**/*"
+    ],
+    "images": [
+        "src/assets/img/**/*"
+    ],
+    "js": [
+        
+    ]
+}
